@@ -21,7 +21,7 @@ results in both quantitative metrics and visual quality.
 ### 2.1 Comparison of ZoomGS and ZoomGS v2
 <p align="center"><img src="./assets/pipline_synzoomgs.png" width="95%"></p>
 (a) Pipline of ZoomGS. ZoomGS models the scene with a Base Gaussians and use CamTrans Module to learn spatial and photometric transitions between the two endpoint 3DGS, and then transform the Base Gaussians to target Gaussians of virtual cameras for rendering.<br />
-(b) Pipline of ZoomGS v2. ZoomGS v2 first calibrate distribution of camera and color parameters from small dual-camera data, and then applies them to Gaussians constructed from large single-camera data for 3D scene rendering. The producted example on the right illustrates that ZoomGS v2 generates images with better quality than ZoomGS
+(b) Pipline of ZoomGS v2. ZoomGS v2 first calibrate distribution of camera and color parameters from small dual-camera data, and then applies them to Gaussians constructed from large single-camera data for 3D scene rendering. The producted example on the right illustrates that ZoomGS v2 generates images with better quality than ZoomGS.
 
 ### 2.2 Zoom FI
 <p align="center"><img src="./assets/FI_model.png" width="55%"></p>
