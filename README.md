@@ -33,8 +33,10 @@ Structure of ZoomFI.
 <!-- - We provide detailed dependencies in [`environment.yml`] for Real-ZoomGS and ZoomFI, and [`./SynZoomGS/environment.yml`] for Syn-ZoomGS. -->
 
 ### 3.2 Datasets
+Coming soon.
 
 ### 3.3 Pretrained models
+Coming soon.
 
 ## 4.Start ZoomGS v2
 Coming soon.
