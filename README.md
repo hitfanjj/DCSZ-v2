@@ -62,7 +62,7 @@ Coming soon.
     - Run [`cd ./ZoomFI/test_video/FAST-VQA-and-FasterVQA-dev`](./)
     - Run [`bash ./test.sh`](./test.sh)
 - Colr continuity testing:
-    - Run [`cd ./ZoomFI/test_color`] (./)
+    - Run [`cd ./ZoomFI/test_color`](./)
     - Run [`bash ./crop_img.sh`](./crop_img.sh)
     - Run [`bash ./test_color.sh`](./test_color.sh)
 
