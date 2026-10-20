@@ -1,0 +1,95 @@
+_wandb:
+    value:
+        cli_version: 0.24.2
+        e:
+            esppxiaysogdg83dq2mt358skc1jhyps:
+                args:
+                    - -o
+                    - options/fast/fast-b.yml
+                codePath: new_test.py
+                codePathLocal: new_test.py
+                cpu_count: 36
+                cpu_count_logical: 72
+                cudaVersion: "12.0"
+                disk:
+                    /:
+                        total: "1005867986944"
+                        used: "953998962688"
+                email: zhou93108@gmail.com
+                executable: /hdd2/fanjunjie/anaconda3/envs/FI/bin/python
+                gpu: NVIDIA RTX A6000
+                gpu_count: 8
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-a45e3304-7f8e-ffa7-4c58-9753b6155015
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-006f9e02-8b58-80c4-3979-de357ba7f26d
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-2316ef6c-41b4-a25f-8988-d3e0bbf35146
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-638e918a-e9a7-8d54-aad4-622ee3dfbe85
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-b1739fb2-de9b-b644-ad57-93dd799f5726
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-94b3a946-9bd5-ccc4-b91d-3f46302bfa33
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-18c56e18-43f8-e3e9-e4e8-340655128619
+                    - architecture: Ampere
+                      cudaCores: 10752
+                      memoryTotal: "51527024640"
+                      name: NVIDIA RTX A6000
+                      uuid: GPU-25ebd09d-d524-b953-02a4-02267b9621c7
+                host: ubuntu
+                memory:
+                    total: "540680683520"
+                os: Linux-5.15.0-60-generic-x86_64-with-glibc2.10
+                program: new_test.py
+                python: CPython 3.8.16
+                root: /hdd2/fanjunjie/video_metric/FAST-VQA-and-FasterVQA-dev
+                startedAt: "2026-06-08T09:19:38.127521Z"
+                writerId: esppxiaysogdg83dq2mt358skc1jhyps
+        m: []
+        python_version: 3.8.16
+        t:
+            "1":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 63
+            "2":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 63
+            "3":
+                - 13
+            "4": 3.8.16
+            "5": 0.24.2
+            "6": 4.33.2
+            "10":
+                - 20
+            "12": 0.24.2
+            "13": linux-x86_64

@@ -1,0 +1,43 @@
+_wandb:
+    value:
+        cli_version: 0.24.2
+        e:
+            q9lgrikav3lhwirg3a0ypd7nti7bsbzr:
+                args:
+                    - -o
+                    - options/fast/fast-b.yml
+                codePath: new_test.py
+                codePathLocal: new_test.py
+                email: zhou93108@gmail.com
+                executable: /hdd2/fanjunjie/anaconda3/envs/FI/bin/python
+                host: ubuntu
+                os: Linux-5.15.0-60-generic-x86_64-with-glibc2.10
+                program: new_test.py
+                python: CPython 3.8.16
+                root: /hdd2/fanjunjie/video_metric/FAST-VQA-and-FasterVQA-dev
+                startedAt: "2026-06-08T09:08:00.646166Z"
+                writerId: q9lgrikav3lhwirg3a0ypd7nti7bsbzr
+        m: []
+        python_version: 3.8.16
+        t:
+            "1":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 63
+            "2":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 63
+            "3":
+                - 13
+            "4": 3.8.16
+            "5": 0.24.2
+            "6": 4.33.2
+            "10":
+                - 20
+            "12": 0.24.2
+            "13": linux-x86_64

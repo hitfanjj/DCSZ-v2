@@ -1,0 +1,49 @@
+[34m[1mwandb[0m: Detected [huggingface_hub.inference] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+fragments branch sampled frames: [  0   2   4   6   8  10  12  14  16  18  20  22  24  26  28  30  32  34
+  36  38  40  42  44  46  48  50  52  54  56  58  60  62  60  62  64  66
+  68  70  72  74  76  78  80  82  84  86  88  90  92  94  96  98 100 102
+ 104 106 108 110 112 114 116 118 120 122 120 122 124 126 128 130 132 134
+ 136 138 140 142 144 146 148 150 152 154 156 158 160 162 164 166 168 170
+ 172 174 176 178 180 182 180 182 184 186 188 190 192 194 196 198 200 202
+ 204 206 208 210 212 214 216 218 220 222 224 226 228 230 232 234 236 238
+   0   2]
+['/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0200.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0201.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0202.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0203.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0204.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0205.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0206.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0207.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0208.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0209.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0210.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0211.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0212.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0213.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0214.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0215.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0216.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0217.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0218.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0219.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0220.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0221.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0222.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0223.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0224.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0225.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0226.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0227.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0228.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0229.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0230.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0231.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0232.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0233.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0234.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0235.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0236.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0237.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0238.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0239.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0241.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0243.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0244.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0245.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0247.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0249.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0250.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0251.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0252.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0253.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0254.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0255.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0256.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0257.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/0258.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/06_00002.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/07_00002.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/09_00002.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/100_00002.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/104_00002.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/106_00002.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/10_00002.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/113_00002.mp4', '/hdd2/fanjunjie/VBench-master/results/onlysyn_real/13_00002.mp4', '/hdd2/fanjunjie/VBench
+[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv3d'>.
+[91m[WARN] Cannot find rule for <class 'torch.nn.modules.normalization.LayerNorm'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'fastvqa.models.swin_backbone.PatchEmbed3D'>. Treat it as zero Macs and zero Params.[00m
+[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
+[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
+[91m[WARN] Cannot find rule for <class 'torch.nn.modules.activation.Softmax'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'fastvqa.models.swin_backbone.WindowAttention3D'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'torch.nn.modules.linear.Identity'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'torch.nn.modules.activation.GELU'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'fastvqa.models.swin_backbone.Mlp'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'fastvqa.models.swin_backbone.SwinTransformerBlock3D'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'timm.layers.drop.DropPath'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'torch.nn.modules.container.ModuleList'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'fastvqa.models.swin_backbone.PatchMerging'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'fastvqa.models.swin_backbone.BasicLayer'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'fastvqa.models.swin_backbone.SwinTransformer3D'>. Treat it as zero Macs and zero Params.[00m
+[INFO] Register count_adap_avgpool() for <class 'torch.nn.modules.pooling.AdaptiveAvgPool3d'>.
+[91m[WARN] Cannot find rule for <class 'fastvqa.models.head.VQAHead'>. Treat it as zero Macs and zero Params.[00m
+[91m[WARN] Cannot find rule for <class 'fastvqa.models.evaluator.DiViDeAddEvaluator'>. Treat it as zero Macs and zero Params.[00m
+8 7 7
+/hdd2/fanjunjie/anaconda3/envs/FI/lib/python3.8/site-packages/torch/utils/checkpoint.py:429: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+/hdd2/fanjunjie/anaconda3/envs/FI/lib/python3.8/site-packages/torch/utils/checkpoint.py:61: UserWarning: None of the inputs have requires_grad=True. Gradients will be None
+  warnings.warn(
+The FLOps of the Variant is 279.5G, with Params 27.53M.
+100
+Validating for val-livevqc.
+Validating: 100%|█████████████████████████████████████████████████████████████████████| 100/100 [00:25<00:00,  3.97it/s]
+mean -0.045287535 std 0.013455768
+Traceback (most recent call last):
+  File "new_test.py", line 239, in <module>
+    main()
+  File "new_test.py", line 215, in main
+    best_ = inference_set(
+  File "new_test.py", line 88, in inference_set
+    with open(f"dover_predictions/{set_name}.pkl", "wb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'dover_predictions/val-livevqc.pkl'
