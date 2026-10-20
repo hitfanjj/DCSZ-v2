@@ -53,7 +53,6 @@ Coming soon.
 - Training: run [`bash ./train.sh`](./train.sh)
 - Inference test data: run [`bash ./inference.sh`](./inference.sh)
 - Image quality testing: 
-    - Run [`cd ./ZoomFI`](./)
     - Run [`cd ./test_img`] (./test_img)
     - Run [`bash ./test.sh`](./test.sh)
 - Video quality testing: 
