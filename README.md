@@ -51,7 +51,7 @@ Coming soon.
   Run [`bash ./zoomgs_render_huawei85.sh`](./zoomgs_trains.sh) -->
 
 ## 5.Start for ZoomFI
-- Run [`cd ./ZoomFI`](./)
+- Run [`cd ./ZoomFI`](./ZoomFI)
 - Training: run [`bash ./train.sh`](./ZoomFI/train.sh)
 - Inference test data: run [`bash ./inference.sh`](./ZoomFI/inference.sh)
 - Image quality testing: 
