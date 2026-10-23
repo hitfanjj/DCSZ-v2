@@ -52,8 +52,8 @@ Coming soon.
 
 ## 5.Start for ZoomFI
 - Run [`cd ./ZoomFI`](./)
-- Training: run [`bash ./train.sh`](./train.sh)
-- Inference test data: run [`bash ./inference.sh`](./inference.sh)
+- Training: run [`bash ./train.sh`](./ZoomFI/train.sh)
+- Inference test data: run [`bash ./inference.sh`](./ZoomFI/inference.sh)
 - Image quality testing: 
     - Run [`cd ./test_img`](./ZoomFI)
     <!-- - Run [`cd ./test_img`] (./test_img) -->
