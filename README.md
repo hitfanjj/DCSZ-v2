@@ -59,14 +59,14 @@ Coming soon.
     <!-- - Run [`cd ./test_img`] (./test_img) -->
     - Run [`bash ./test.sh`](./ZoomFI/test_img/test.sh)
 - Video quality testing: 
-    - Run [`cd ../test_video/DOVER-master`](./ZoomFI/test_img)
+    - Run [`cd ../test_video/DOVER-master`](./ZoomFI/test_video/DOVER-master)
     - Run [`bash ./test.sh`](./ZoomFI/test_video/DOVER-master/test.sh)
-    - Run [`cd ../FAST-VQA-and-FasterVQA-dev`](./ZoomFI/test_video/DOVER-master)
+    - Run [`cd ../FAST-VQA-and-FasterVQA-dev`](./ZoomFI/test_video/FAST-VQA-and-FasterVQA-dev)
     - Run [`bash ./test.sh`](./ZoomFI/test_video/FAST-VQA-and-FasterVQA-dev/test.sh)
 - Colr continuity testing:
-    - Run [`cd ../../test_color`](./ZoomFI/test_video/FAST-VQA-and-FasterVQA-dev)
-    - Run [`bash ./crop_img.sh`](./crop_img.sh)
-    - Run [`bash ./test_color.sh`](./test_color.sh)
+    - Run [`cd ../../test_color`](./ZoomFI/test_color)
+    - Run [`bash ./crop_img.sh`](./ZoomFI/test_color/crop_img.sh)
+    - Run [`bash ./test_color.sh`](./ZoomFI/test_color/test_color.sh)
 
 ## Acknowledgement
 
