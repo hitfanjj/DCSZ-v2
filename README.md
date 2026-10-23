@@ -59,12 +59,12 @@ Coming soon.
     <!-- - Run [`cd ./test_img`] (./test_img) -->
     - Run [`bash ./test.sh`](./test.sh)
 - Video quality testing: 
-    - Run [`cd ./test_video/DOVER-master`](./ZoomFI)
+    - Run [`cd ../test_video/DOVER-master`](./ZoomFI/test_img)
     - Run [`bash ./test.sh`](./test.sh)
     - Run [`cd ../FAST-VQA-and-FasterVQA-dev`](./ZoomFI/test_video/DOVER-master)
     - Run [`bash ./test.sh`](./test.sh)
 - Colr continuity testing:
-    - Run [`cd ./test_color`](./ZoomFI)
+    - Run [`cd ../../test_color`](./ZoomFI/test_video/FAST-VQA-and-FasterVQA-dev)
     - Run [`bash ./crop_img.sh`](./crop_img.sh)
     - Run [`bash ./test_color.sh`](./test_color.sh)
 
