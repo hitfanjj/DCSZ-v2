@@ -61,7 +61,7 @@ Coming soon.
 - Video quality testing: 
     - Run [`cd ./test_video/DOVER-master`](./ZoomFI)
     - Run [`bash ./test.sh`](./test.sh)
-    - Run [`cd ./test_video/FAST-VQA-and-FasterVQA-dev`](./ZoomFI)
+    - Run [`cd ../FAST-VQA-and-FasterVQA-dev`](./ZoomFI/test_video/DOVER-master)
     - Run [`bash ./test.sh`](./test.sh)
 - Colr continuity testing:
     - Run [`cd ./test_color`](./ZoomFI)
