@@ -56,7 +56,6 @@ def calc_flow(args, model, image1, image2):
 
 parser = argparse.ArgumentParser(description="finetune FT model")
 parser.add_argument('--cfg', default='config/eval/kitti-S.json', help='experiment configure file name', required=True, type=str)
-parser.add_argument('--model', default='../SEA-RAFT-main/pretrained/Tartan-C-T-TSKH-kitti432x960-S.pth', help='checkpoint path', required=True, type=str)
 parser.add_argument("--dataroot", type=str, default="./", help="data path")
 parser.add_argument("--save_dir", type=str, default="../dataset/DCSZ_dataset/DCSZ_syn", help="save path")
 parser.add_argument('--UW_size', default=0.6, type=float, help='world size')
@@ -76,9 +75,8 @@ torch.manual_seed(seed)
 torch.cuda.manual_seed_all(seed)
 
 model = RAFT(args).to(device)
-load_ckpt(model, args.model)
-x = torch.load("./99_flownet.pkl", map_location='cuda')
-model.load_state_dict(convert(x), strict=True)
+x = torch.load("../pretrained/test_color_crop_model/99_flownet.pkl", map_location='cuda')
+model.load_state_dict(convert(x), strict=False)
 
 dataroot = args.dataroot
 idsori = os.listdir(dataroot)
@@ -106,7 +104,7 @@ for id in ids:
         img_img = cv2.imread(files[i])
         img_img = cv2.resize(img_img, (1280,1664), interpolation=cv2.INTER_LINEAR)
         
-        if args.UW_size != 0.6:
+        if args.UW_size == 0.6:
             scale = 1.0 / (0.7 + 0.3 * (i/31))  
             shape = img_img.shape
             I1 = cv2.resize(img_img, (int(img_img.shape[1]*scale), int(img_img.shape[0]*scale)), interpolation=cv2.INTER_CUBIC)

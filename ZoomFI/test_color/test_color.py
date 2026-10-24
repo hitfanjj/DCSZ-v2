@@ -232,7 +232,7 @@ def evaluate_deltae(img_img, pre_img_img, cl, blur_rgb):
 
 parser = argparse.ArgumentParser(description="test color")
 parser.add_argument('--crop_img_path', default='./', help='cropped image path', required=True, type=str)
-args = parse_args(parser)
+args = parser.parse_args()
 
 def convert(param):
     return {
@@ -246,6 +246,7 @@ random.seed(seed)
 np.random.seed(seed)
 torch.manual_seed(seed)
 torch.cuda.manual_seed_all(seed)
+dataroot = args.crop_img_path
 
 idsori = os.listdir(dataroot)
 mse_total = 0
