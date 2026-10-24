@@ -111,7 +111,7 @@ class IFNet_m(nn.Module):
         self.contextnet = Contextnet()
         self.unet = Unet()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.metric = Metric()
+        # self.metric = Metric()
 
     def forward(self, x, scale=[1,1,1], timestep=0.5, returnflow=False):
         #t = timestep#.item()

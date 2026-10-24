@@ -5,18 +5,17 @@ import torch.optim as optim
 import itertools
 from model.warplayer import warp
 import torch.nn.functional as F
-from model.IFNet_m_jiaozheng_utils import softsplat
-from model import softsplat1
+# from model import softsplat1
 from softmax_splatting.softsplat import FunctionSoftsplat
 from model.warplayer_occ import getwarp
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-def forward_warp0(tenIn, tenFlow, z=None):
-    out = softsplat1.FunctionSoftsplat(tenInput=tenIn, tenFlow=tenFlow, tenMetric=z, strType='softmax')
-    #out = softsplat(tenIn, tenFlow, tenMetric=z, strMode='avg')
-    #out = softsplat(tenIn, tenFlow, tenMetric=z, strMode='soft')
-    return out
+# def forward_warp0(tenIn, tenFlow, z=None):
+#     out = softsplat1.FunctionSoftsplat(tenInput=tenIn, tenFlow=tenFlow, tenMetric=z, strType='softmax')
+#     #out = softsplat(tenIn, tenFlow, tenMetric=z, strMode='avg')
+#     #out = softsplat(tenIn, tenFlow, tenMetric=z, strMode='soft')
+#     return out
 
 def conv(in_planes, out_planes, kernel_size=3, stride=1, padding=1, dilation=1):
     return nn.Sequential(

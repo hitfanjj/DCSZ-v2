@@ -6,10 +6,10 @@ import itertools
 from model.warplayer import warp
 import torch.nn.functional as F
 
-from model.IFNet_m_jiaozheng_utils import softsplat
-def forward_warp(tenIn, tenFlow, z=None):
-    out = softsplat(tenIn, tenFlow, tenMetric=z, strMode='avg')
-    return out
+# from model.IFNet_m_jiaozheng_utils import softsplat
+# def forward_warp(tenIn, tenFlow, z=None):
+#     out = softsplat(tenIn, tenFlow, tenMetric=z, strMode='avg')
+#     return out
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
