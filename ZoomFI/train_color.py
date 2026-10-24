@@ -91,9 +91,10 @@ if __name__ == "__main__":
     parser.add_argument('--epoch', default=100, type=int)
     parser.add_argument('--batch_size', default=1, type=int, help='minibatch size')
     parser.add_argument('--world_size', default=4, type=int, help='world size')
-    parser.add_argument('--load_dir', default=4, type=int, help='world size')
-    parser.add_argument('--UW_size', default=0.6, type=float, help='world size')
-    parser.add_argument('--color_model', default="./", type=str, help='world size')
+    parser.add_argument('--load_dir', default=4, type=str, help='loaded nocolor pretrained model')
+    parser.add_argument('--UW_size', default=0.6, type=float, help='image size')
+    parser.add_argument('--model_size', default='full', type=str, help='full: zoomfi, small: zoomfi-lite')
+    parser.add_argument('--color_model', default="./", type=str, help='color model')
     parser.add_argument('--local-rank', dest='local_rank', default=0, type=int, help='local rank')
     args = parse_args(parser)
     torch.distributed.init_process_group(backend="nccl", world_size=args.world_size, timeout=timedelta(seconds=72000))
@@ -108,14 +109,14 @@ if __name__ == "__main__":
     torch.autograd.set_detect_anomaly = True
     
     load_root = args.load_dir
-    model = Model(args, load_root, local_rank=args.local_rank)
+    model = Model(args, args.model_size, load_root, local_rank=args.local_rank)
     
     log_dir = args.log_dir
     os.makedirs(log_dir, exist_ok=True)
     data_root = args.dataset_dir
     if args.UW_size == 0.6:
         if_crop = False
-    else
+    else:
         if_crop = True
     color_model = args.color_model
 

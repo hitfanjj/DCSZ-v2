@@ -9,6 +9,7 @@ import itertools
 from model.warplayer import warp
 from torch.nn.parallel import DistributedDataParallel as DDP
 from model.zoomfi import * 
+from model.zoomfi_small import * 
 
 import torch.nn.functional as F
 from model.loss import *
@@ -39,8 +40,11 @@ def calc_flow(args, model, image1, image2):
     
 
 class Model:
-    def __init__(self, args, load_root=None, local_rank=-1):
-        self.flownet = IFNet_m(args)
+    def __init__(self, args, model_size, load_root=None, local_rank=-1):
+        if model_size=='full':
+            self.flownet = IFNet_m(args)
+        else:
+            self.flownet = IFNet_m_small(args)
         self.args = args
         #导入SEA-RAFT
         load_ckpt(self.flownet.searaft, args.model)
@@ -100,29 +104,9 @@ class Model:
             }
             
         if suffix is None:
-            load_path = '{}/flownet.pkl'.format(path)
+            load_path = path
         else:
-            load_path = '{}/{}_flownet.pkl'.format(path, suffix)
-
-        if rank <0:
-            self.flownet.load_state_dict(convert(torch.load(load_path)), strict=True)
-        else:
-           x = torch.load(load_path, map_location='cuda')['model_state_dict']
-           #print(x.keys())
-           self.flownet.load_state_dict(x, strict=True)
-           
-    def load_model1(self, path, rank=0, suffix=None):
-        def convert(param):
-            return {
-            k.replace("module.", ""): v
-                for k, v in param.items()
-                if "module." in k
-            }
-            
-        if suffix is None:
-            load_path = '{}/flownet.pkl'.format(path)
-        else:
-            load_path = '{}/{}_flownet.pkl'.format(path, suffix)
+            load_path = '{}/{}.pkl'.format(path, suffix)
 
         if rank <0:
             self.flownet.load_state_dict(convert(torch.load(load_path)), strict=False)

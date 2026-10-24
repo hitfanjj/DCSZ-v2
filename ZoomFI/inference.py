@@ -17,7 +17,7 @@ from argparse import ArgumentParser
 import glob
 
 from config.parser import parse_args
-from searaft_daiti_model_250722_addforward1 import Model  #direct_daiti_250219
+from model_color import Model
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -66,14 +66,15 @@ if __name__ == '__main__':
     parser.add_argument("--log_dir", type=str, default="./", help="log path")
     parser.add_argument("--dataset_dir", type=str, default="./", help="train data path")
     parser.add_argument('--save_dir', type=str, default='./test_results', help='where to save image results')
-    parser.add_argument('--suffix', default=4, type=int, help='load id')
-    parser.add_argument('--UW_size', default=0.6, type=float, help='world size')
+    parser.add_argument('--suffix_name', default=4, type=str, help='load id')
+    parser.add_argument('--UW_size', default=0.6, type=float, help='image size')
+    parser.add_argument('--model_size', default='full', type=str, help='full: zoomfi, small: zoomfi-lite')
     args = parse_args(parser)
 
     args.save_dir = os.path.join(args.log_dir, args.save_dir)
     
-    model = Model(args)
-    model.load_model(args.log_dir, suffix=args.suffix, rank=0)
+    model = Model(args, args.model_size)
+    model.load_model(args.log_dir, suffix=args.suffix_name, rank=0)
 
     model.eval()
     model.device()
@@ -87,7 +88,7 @@ if __name__ == '__main__':
     ssim_all_list = []
     lpips_all_list = []
 
-    data_dir = os.path.join(args.dataset_dir, "syn2")
+    data_dir = os.path.join(args.dataset_dir)
     ids = os.listdir(data_dir)
     
     for id in ids:

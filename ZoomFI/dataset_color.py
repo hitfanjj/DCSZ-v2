@@ -30,7 +30,7 @@ def dict_slice(adict, start, end):
     return dict_slice
 
 class DZDataset(Dataset):
-    def __init__(self, dataset_name, data_root, if_crop=False, color_model, batch_size=1):
+    def __init__(self, dataset_name, data_root, if_crop=False, color_model="./" , batch_size=1):
         self.batch_size = batch_size
         self.dataset_name = dataset_name        
         self.data_root = data_root
