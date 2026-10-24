@@ -15,26 +15,10 @@ import os.path as osp
 import numpy as np
 from argparse import ArgumentParser
 import glob
-from skimage.metrics import structural_similarity as SSIM
 
-from config.parser import parse_args
-#from searaft_refine_model import Model
-#from searaft_IFNet_model import Model
-from searaft_daiti_model_250219 import Model  #direct_daiti_250219
 import nriqa
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-def interpolate(I0, I1, timestep):
-    imgs = []
-    I0 = (torch.tensor(I0.transpose(2, 0, 1)).to(device) / 255.).unsqueeze(0)
-    I1 = (torch.tensor(I1.transpose(2, 0, 1)).to(device) / 255.).unsqueeze(0)
-
-    mid = model.inference(I0, I1, timestep=timestep)[0]
-    mid = mid.clamp(0, 1).permute(1, 2, 0).detach().cpu().numpy()
-    mid = (mid * 255.).astype(np.uint8)
-    imgs.append(mid)
-    return imgs
 
 def crop_center(hr, ph, pw):
     ih, iw = hr.shape[0:2]
@@ -57,11 +41,11 @@ def calc_lpips(out, target, loss_fn_alex, range):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument("--dataset_dir", type=str, default="./", help="train data path")
+    # parser.add_argument("--dataset_dir", type=str, default="./", help="train data path")
     parser.add_argument('--save_dir', type=str, default='test_results/', help='where to save image results')
-    args = parse_args(parser)
+    args = parser.parse_args()
 
-    args.save_dir = os.path.join(args.log_dir, args.save_dir)
-    print(args.log_dir)
+    # args.save_dir = os.path.join(args.log_dir, args.save_dir)
+    # print(args.log_dir)
     
     nriqa.main(args.save_dir, 0)

@@ -101,7 +101,7 @@ def main(input_dir, device):
 	print('musiq', iqa_model_mus.lower_better)
 
 	input_file = input_dir
-	save_file = os.path.join(input_dir, 'metrics_syn_260613.txt')
+	save_file = os.path.join(input_dir, 'metrics_real.txt')
 
 	if os.path.isfile(input_file):
 		input_paths = [input_file]
@@ -154,8 +154,8 @@ def main(input_dir, device):
 		avg_score_man += pre_img_man
 		avg_score_topiq += pre_img_topiq
 
-		sf.write('%s  \t musiq: %.3f\n maniqa: %.3f\n qalign: %.3f\n topiq: %.3f\n' % 
-		         (img_name, pre_img_mus, pre_img_man, pre_img_qal, pre_img_topiq))
+		sf.write('%s  \t musiq: %.3f\n maniqa: %.3f\n topiq: %.3f\n' % 
+		         (img_name, pre_img_mus, pre_img_man, pre_img_topiq))
 
 
 	avg_score_mus /= test_img_num
