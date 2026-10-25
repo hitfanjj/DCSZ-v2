@@ -1,0 +1,124 @@
+import sys
+sys.path.append('./model/searaft/core')
+sys.path.append('./model/searaft')
+import warnings
+warnings.filterwarnings('ignore')
+import os
+import cv2
+import torch
+import os.path as osp
+import numpy as np
+from argparse import ArgumentParser
+import glob
+
+from model.searaft.config.parser import parse_args
+from model.model_color import Model
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+def interpolate(I0, I1, timestep):
+    imgs = []
+    I0 = (torch.tensor(I0.transpose(2, 0, 1)).to(device) / 255.).unsqueeze(0)
+    I1 = (torch.tensor(I1.transpose(2, 0, 1)).to(device) / 255.).unsqueeze(0)
+
+    mid, mask, warped_img0_f, warped_img1 = model.inference(I0, I1, timestep=timestep)
+    mid = mid[0]
+    mid = mid.clamp(0, 1).permute(1, 2, 0).detach().cpu().numpy()
+    mid = (mid * 255.).astype(np.uint8)
+    imgs.append(mid)
+    return imgs
+
+def crop_center(hr, ph, pw):
+    ih, iw = hr.shape[0:2]
+    lr_patch_h, lr_patch_w = ph, pw
+    ph = ih // 2 - lr_patch_h // 2
+    pw = iw // 2 - lr_patch_w // 2
+
+    return hr[ph:ph+lr_patch_h, pw:pw+lr_patch_w, :]
+
+
+if __name__ == '__main__':
+    parser = ArgumentParser()
+    parser.add_argument('--cfg', default='config_of_searaft/eval/kitti-S.json', help='experiment configure file name', required=True, type=str)
+    parser.add_argument('--model', default='./pretrained/Tartan-C-T-TSKH-kitti432x960-S.pth', help='checkpoint path', required=True, type=str)
+    parser.add_argument("--log_dir", type=str, default="./", help="log path")
+    parser.add_argument("--dataset_dir", type=str, default="./", help="train data path")
+    parser.add_argument('--save_dir', type=str, default='./test_results', help='where to save image results')
+    parser.add_argument('--suffix_name', default=4, type=str, help='load id')
+    parser.add_argument('--UW_size', default=0.6, type=float, help='image size')
+    parser.add_argument('--model_size', default='full', type=str, help='full: zoomfi, small: zoomfi-lite')
+    args = parse_args(parser)
+
+    args.save_dir = os.path.join(args.log_dir, args.save_dir)
+    
+    model = Model(args, args.model_size)
+    model.load_model(args.log_dir, suffix=args.suffix_name, rank=0)
+
+    model.eval()
+    model.device()
+
+    save_file = os.path.join(args.log_dir, 'metrics_syn.txt')
+    sf = open(save_file, 'a')
+    sf.write(f'{args.save_dir}\n')
+    p = sf.tell()
+
+    psnr_all_list = []
+    ssim_all_list = []
+    lpips_all_list = []
+
+    data_dir = os.path.join(args.dataset_dir)
+    ids = os.listdir(data_dir)
+    
+    for id in ids:
+        psnr_list = []
+        ssim_list = []
+        lpips_list = []
+        files = sorted(glob.glob(os.path.join(os.path.join(data_dir, id), '*.png')), key=lambda f:int(f.split('/')[-1].split('.')[0].split('_')[-1]))
+        print(os.path.join(data_dir, id), len(files))
+        uw_image = cv2.imread(files[0])
+        wide_image = cv2.imread(files[-1])
+        uw_image = cv2.resize(uw_image, (1216,1632), interpolation=cv2.INTER_LINEAR)
+        wide_image = cv2.resize(wide_image, (1216,1632), interpolation=cv2.INTER_LINEAR)
+        os.makedirs(args.save_dir, exist_ok=True)
+        
+        I1 = wide_image
+
+        shape = uw_image.shape
+
+        start = 1
+        end = 31
+
+        if args.UW_size == 0.6:
+            I0 = uw_image
+        else:
+            scale = 0.85  / 0.6  
+            I0 = cv2.resize(uw_image, (int(uw_image.shape[1]*scale), int(uw_image.shape[0]*scale)), interpolation=cv2.INTER_CUBIC)
+            I0 = crop_center(I0, shape[0], shape[1])
+            
+        save_img = I0
+        os.makedirs(os.path.join(args.save_dir, id), exist_ok=True)
+        save_path = osp.join(args.save_dir, id, '{:03d}.png'.format(start - 1))
+        cv2.imwrite(save_path, save_img)
+
+        save_img = I1
+        os.makedirs(os.path.join(args.save_dir, id), exist_ok=True)
+        save_path = osp.join(args.save_dir, id, '{:03d}.png'.format(end))
+        cv2.imwrite(save_path, save_img)
+
+
+        for ii in range(start, end, 1):
+            timestep = ii / 31
+            
+            gif_imgs = [I0, I1]
+
+            gif_imgs_temp = [gif_imgs[0], ]
+            for i, (img_start, img_end) in enumerate(zip(gif_imgs[:-1], gif_imgs[1:])):
+                interp_imgs = interpolate(img_start, img_end, timestep=timestep)
+                gif_imgs_temp += interp_imgs
+                gif_imgs_temp += [img_end, ]
+            gif_imgs = gif_imgs_temp
+
+            save_img = gif_imgs[1]
+
+            save_path = osp.join(args.save_dir, id, '{:03d}.png'.format(ii))
+            cv2.imwrite(save_path, save_img)
