@@ -1,4 +1,4 @@
-# Learning-Dual-Camera-Smooth-Zoom-via-Decoupled-Geometric-Photometric-Data-Synthesis
+# Learning Dual-Camera Smooth Zoom via Decoupled Geometric-Photometric Data Synthesis
 Code of Learning Dual-Camera Smooth Zoom via Decoupled Geometric-Photometric Data Synthesis
 
 ## 1.Abstract
@@ -83,7 +83,7 @@ Special thanks to the following awesome projects!
 If you make use of our work, please cite our paper.
 
 ```bibtex
-@inproceedings{fan2026dcszv2,
+@article{fan2026dcszv2,
   title        = {Learning Dual-Camera Smooth Zoom via Decoupled Geometric-Photometric Data Synthesis},
   author       = {Junjie Fan, Zhilu Zhang, Renlong Wu, Dazhi Zhang and Wangmeng Zuo},
   journal      = {arXiv preprint arXiv:2610.34854},
