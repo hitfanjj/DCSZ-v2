@@ -81,12 +81,16 @@ Special thanks to the following awesome projects!
 
 ## Citation
 If you make use of our work, please cite our paper.
+
+```bibtex
 @inproceedings{fan2026dcszv2,
-    title        = {Learning Dual-Camera Smooth Zoom via Decoupled Geometric-Photometric Data Synthesis},
-    author       = {Junjie Fan, Zhilu Zhang, Renlong Wu, Dazhi Zhang and Wangmeng Zuo},
-    journal      = {arXiv preprint arXiv:2610.34854},
-    year         = {2026},
-    eprint       = {2610.34854},
-    archivePrefix= {arXiv},
-    primaryClass = {cs.CV},
-    url          = {https://arxiv.org/abs/2610.34854}}
+  title        = {Learning Dual-Camera Smooth Zoom via Decoupled Geometric-Photometric Data Synthesis},
+  author       = {Junjie Fan, Zhilu Zhang, Renlong Wu, Dazhi Zhang and Wangmeng Zuo},
+  journal      = {arXiv preprint arXiv:2610.34854},
+  year         = {2026},
+  eprint       = {2610.34854},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CV},
+  url          = {https://arxiv.org/abs/2610.34854}
+}
+```
