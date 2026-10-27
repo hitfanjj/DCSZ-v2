@@ -36,7 +36,8 @@ Structure of ZoomFI.
 Coming soon.
 
 ### 3.3 Pretrained models
-Coming soon.
+- Pretrained model link: https://huggingface.co/woihcdrfr/DCSZ-v2
+- Please put the above models into './ZoomFI/pretrained/'
 
 ## 4.Start ZoomGS v2
 Coming soon.
