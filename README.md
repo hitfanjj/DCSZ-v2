@@ -2,7 +2,7 @@
 PyTorch implementation of [**Learning Dual-Camera Smooth Zoom via Decoupled Geometric-Photometric Data Synthesis**](https://arxiv.org/abs/2610.34854.pdf)
 
 
-[![arXiv](https://img.shields.io/badge/arXiv-2404.04908-b10.svg)](https://arxiv.org/abs/2610.34854.pdf)
+[![arXiv](https://img.shields.io/badge/arXiv-2610.34854-b10.svg)](https://arxiv.org/abs/2610.34854.pdf)
 [![Project](https://img.shields.io/badge/Project-Website-orange)](https://hitjunjief.github.io/DCSZ-v2/)
 
 ## 1.Abstract
