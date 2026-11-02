@@ -37,7 +37,8 @@ Structure of ZoomFI.
 <!-- - We provide detailed dependencies in [`environment.yml`] for Real-ZoomGS and ZoomFI, and [`./SynZoomGS/environment.yml`] for Syn-ZoomGS. -->
 
 ### 3.2 Datasets
-Coming soon.
+Training datasets coming soon.
+Test datasets : https://huggingface.co/datasets/woihcdrfr/DCSZ-v2-test
 
 ### 3.3 Pretrained models
 - Pretrained model link: https://huggingface.co/woihcdrfr/DCSZ-v2
